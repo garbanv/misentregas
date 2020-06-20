@@ -50,8 +50,13 @@ function IndexPage  ()  {
         const jwt = data.jwt ? data.jwt : navigate("/");;
         const username = data.user.username; 
     
-        const token = window.localStorage.setItem('jwt', jwt);
-        const user = window.localStorage.setItem('user', username);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('jwt', jwt);
+          localStorage.setItem('user', username)
+      }
+
+        // const token = window ? localStorage.setItem('jwt', jwt) : null;
+        // const user = window ? localStorage.setItem('user', username) : null;
 
         // const isLoggedIn = data.jwt ? window.location.href="/dashboard" : console.log("Error en la clave")
         const isLoggedIn = data.jwt ? navigate('/dashboard') : console.log("Error en la clave")

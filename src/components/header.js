@@ -6,8 +6,8 @@ import logo from '../images/logo.png'
 
 const Header = ({ siteTitle }) => {
 
-  const [token, setToken] = useState(typeof window !== 'undefined' && window.localStorage.getItem(jwt))
-  const [user,setUser] = useState(localStorage.getItem('user'));
+  const [token, setToken] = useState(sessionStorage.getItem('jwt'))
+  const [user,setUser] = useState(sessionStorage.getItem('user'));
 
   const haveToken = token ?  ' ' : navigate("/");
 

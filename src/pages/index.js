@@ -16,13 +16,23 @@ function IndexPage  ()  {
     password:null
   })
 
+  const [token, setToken] = useState(null);
+  const [username, setUsername] =useState(null)
+
 
   const handleClick = (e)=>{
     e.preventDefault()
       fetchData(login);
     }
 
+    // const saveToken = () =>{
+    //   const token = localStorage.setItem('jwt', jwt);
+    //   const user = localStorage.setItem('user', username);
+    // }
 
+    // useEffect(()=>{
+    //   saveToken();
+    // },[jwt,user])
 
 
  function fetchData  (x){
@@ -37,11 +47,12 @@ function IndexPage  ()  {
        .then(response => response.json())
        .then(data => {
        
-        const jwt = data.jwt ? data.jwt : window.location.href="/";;
+        const jwt = data.jwt ? data.jwt : navigate("/");;
         const username = data.user.username; 
     
-        const token = localStorage.setItem('jwt', jwt);
-        const user = localStorage.setItem('user', username);
+        const token = window.localStorage.setItem('jwt', jwt);
+        const user = window.localStorage.setItem('user', username);
+
         // const isLoggedIn = data.jwt ? window.location.href="/dashboard" : console.log("Error en la clave")
         const isLoggedIn = data.jwt ? navigate('/dashboard') : console.log("Error en la clave")
 

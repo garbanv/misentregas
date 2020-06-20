@@ -13,7 +13,7 @@ import RestCard from '../components/restCard'
 
 
 const Dashboard = ()=> {
-    const [token, setToken] = useState(localStorage.getItem('jwt'))
+    // const [token, setToken] = useState(localStorage.getItem('jwt'))
     const [trips, setTrips] = useState([]);
     const [restaurants, setRestaurants] = useState([]);
 

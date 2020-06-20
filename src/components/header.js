@@ -6,14 +6,14 @@ import logo from '../images/logo.png'
 
 const Header = ({ siteTitle }) => {
 
-  const [token, setToken] = useState(localStorage.getItem('jwt'))
+  const [token, setToken] = useState(typeof window !== 'undefined' && window.localStorage.getItem(jwt))
   const [user,setUser] = useState(localStorage.getItem('user'));
 
   const haveToken = token ?  ' ' : navigate("/");
 
   function logout (){
       localStorage.clear();
-      window.location.href="/"
+      navigate("/")
   }
 
   return (

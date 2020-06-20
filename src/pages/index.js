@@ -25,14 +25,6 @@ function IndexPage  ()  {
       fetchData(login);
     }
 
-    // const saveToken = () =>{
-    //   const token = localStorage.setItem('jwt', jwt);
-    //   const user = localStorage.setItem('user', username);
-    // }
-
-    // useEffect(()=>{
-    //   saveToken();
-    // },[jwt,user])
 
 
  function fetchData  (x){
@@ -50,13 +42,10 @@ function IndexPage  ()  {
         const jwt = data.jwt ? data.jwt : navigate("/");;
         const username = data.user.username; 
     
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('jwt', jwt);
-          localStorage.setItem('user', username)
-      }
+    
 
-        // const token = window ? localStorage.setItem('jwt', jwt) : null;
-        // const user = window ? localStorage.setItem('user', username) : null;
+        const token =  localStorage.setItem('jwt', jwt);
+        const user = localStorage.setItem('user', username);
 
         // const isLoggedIn = data.jwt ? window.location.href="/dashboard" : console.log("Error en la clave")
         const isLoggedIn = data.jwt ? navigate('/dashboard') : console.log("Error en la clave")

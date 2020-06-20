@@ -1,16 +1,19 @@
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {Navbar, NavDropdown, Nav, Container} from 'react-bootstrap';
 import logo from '../images/logo.png'
 
 const Header = ({ siteTitle }) => {
 
-  const [token, setToken] = useState(localStorage.getItem('jwt'))
-  const [user,setUser] = useState(localStorage.getItem('user'));
+  const [token, setToken] = useState('')
+  const [user,setUser] = useState('');
 
   const haveToken = token ?  ' ' : navigate("/");
-
+useEffect(()=>{
+setToken(localStorage.getItem('jwt'))
+setUser(localStorage.getItem('user'))
+},[jwt,user])
   function logout (){
       localStorage.clear();
       navigate("/")

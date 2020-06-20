@@ -29,7 +29,7 @@ const Dashboard = ()=> {
     // }
 
     function getRestaurants(){
-        fetch('http://localhost:1337/restaurants')
+        fetch('http://misentregas.herokuapp.com/restaurants')
         .then(response=> response.json())
         .then(res=> setRestaurants(res))
     }

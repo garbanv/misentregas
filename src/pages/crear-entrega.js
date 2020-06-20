@@ -71,7 +71,7 @@ async function handleRestId(e){
 async function saveEntrega(e){
 
     e.preventDefault();
-  const fetchData =  await fetch('http://localhost:1337/trips',{
+  const fetchData =  await fetch('http://misentregas.herokuapp.com/trips',{
         method:'POST',
         headers:{
             'Authorization':`Bearer ${token}`,
@@ -89,7 +89,7 @@ async function saveEntrega(e){
   //  console.log(listTrips)
   //  setFullTrips([...listTrips, lista])
   //  console.log(fullTrips)
-  const fetchRest = await fetch('http://localhost:1337/restaurants/'+restId,{
+  const fetchRest = await fetch('http://misentregas.herokuapp.com/restaurants/'+restId,{
       method:'PUT',
       headers:{
           'Authorization':`Bearer ${token}`,

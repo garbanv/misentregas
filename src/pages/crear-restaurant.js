@@ -15,7 +15,7 @@ export default function CrearRestaurant() {
 
     function saveRestaurant(e){
         e.preventDefault();
-        fetch('http://localhost:1337/restaurants',{
+        fetch('http://misentregas.herokuapp.com/restaurants',{
             method:"POST",
             headers:{
                 'Authorization': `Bearer ${token}`

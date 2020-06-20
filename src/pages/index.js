@@ -27,7 +27,7 @@ function IndexPage  ()  {
 
  function fetchData  (x){
   
-    fetch('http://localhost:1337/auth/local', {
+    fetch('http://misentregas.herokuapp.com/auth/local', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

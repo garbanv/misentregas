@@ -3,10 +3,45 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+img {
+  max-width:100%;
+}
+.card-entregas {
+  background-image: url('../images/bgentrega.png');
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.bg-dark2 {
+  /* background-color:#fca311; */
+}
+
+.card-cobrar {
+  background-image: url('../images/bg-cardsCobrar.png');
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  /* background-color:#e5e5e5; */
+}
+.card {
+  border:none;
+}
+
+.dashboard-create-trips  .card,.total-front-trips .card {
+  border:none;
+  /* height:25vh; */
+  }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#f4f4f4;
 }
 article,
 aside,

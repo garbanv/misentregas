@@ -22,7 +22,7 @@ const Dashboard = ()=> {
     },[])
 
     function getRestaurants(){
-        fetch('http://misentregas.herokuapp.com/restaurants')
+        fetch('https://misentregas.herokuapp.com/restaurants')
         .then(response=> response.json())
         .then(res=> setRestaurants(res))
     }

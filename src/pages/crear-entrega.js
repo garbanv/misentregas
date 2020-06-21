@@ -45,7 +45,7 @@ useEffect(()=> {
 },[restTrip])
 
 function getRestaurants(){
-    fetch('http://localhost:1337/restaurants')
+    fetch('https://localhost:1337/restaurants')
     .then(response => response.json())
     .then(res=> {
       setRestList(res)
@@ -78,7 +78,7 @@ async function handleRestId(e){
 async function saveEntrega(e){
 
     e.preventDefault();
-  const fetchData =  await fetch('http://misentregas.herokuapp.com/trips',{
+  const fetchData =  await fetch('https://misentregas.herokuapp.com/trips',{
         method:'POST',
         headers:{
             'Authorization':`Bearer ${token}`,
@@ -96,7 +96,7 @@ async function saveEntrega(e){
   //  console.log(listTrips)
   //  setFullTrips([...listTrips, lista])
   //  console.log(fullTrips)
-  const fetchRest = await fetch('http://misentregas.herokuapp.com/restaurants/'+restId,{
+  const fetchRest = await fetch('https://misentregas.herokuapp.com/restaurants/'+restId,{
       method:'PUT',
       headers:{
           'Authorization':`Bearer ${token}`,

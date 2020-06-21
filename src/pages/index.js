@@ -33,7 +33,7 @@ const isWindow = ()=> {
 
  function fetchData  (x){
   
-    fetch('http://misentregas.herokuapp.com/auth/local', {
+    fetch('https://misentregas.herokuapp.com/auth/local', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

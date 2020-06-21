@@ -13,7 +13,6 @@ import RestCard from '../components/restCard'
 
 
 const Dashboard = ()=> {
-    // const [token, setToken] = useState(localStorage.getItem('jwt'))
     const [trips, setTrips] = useState([]);
     const [restaurants, setRestaurants] = useState([]);
 
@@ -21,12 +20,6 @@ const Dashboard = ()=> {
         // getData()
         getRestaurants()
     },[])
-
-    // function getData(){
-    //     fetch('http://localhost:1337/trips')
-    //     .then(response=> response.json())
-    //     .then(res=> setTrips(res))
-    // }
 
     function getRestaurants(){
         fetch('http://misentregas.herokuapp.com/restaurants')

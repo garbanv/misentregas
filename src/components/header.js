@@ -6,20 +6,21 @@ import logo from '../images/logo.png'
 
 const Header = ({ siteTitle }) => {
 
-  const [token, setToken] = useState(null)
-  const [user,setUser] = useState(null);
+  const [token, setToken] = useState(undefined)
+  const [user,setUser] = useState(undefined);
 
   
 useEffect(()=>{
 
   if (typeof window !== `undefined`) {
-    setToken(localStorage.getItem('jwt'))
-    setUser(localStorage.getItem('user'))
+    setToken(window.localStorage.getItem('jwt'))
+    setUser(window.localStorage.getItem('user'))
   }
 
 },[])
 
 const haveToken = token ?  ' ' : navigate("/");
+
   function logout (){
       localStorage.clear();
       navigate("/")

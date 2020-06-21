@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link, navigate } from "gatsby"
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 
@@ -10,8 +10,15 @@ import SEO from "../components/seo"
 
 
 export default function CrearRestaurant() {
-    const [token, setToken] = useState(localStorage.getItem('jwt'))
+    const [token, setToken] = useState(undefined)
     const [restaurant, setRestaurant]= useState('');
+
+    useEffect(()=> {
+        if (typeof window !== `undefined`) {
+          setToken(window.localStorage.getItem('jwt'))
+        }
+       
+      },[])
 
     function saveRestaurant(e){
         e.preventDefault();

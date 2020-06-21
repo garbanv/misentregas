@@ -13,16 +13,16 @@ const Header = ({ siteTitle }) => {
 useEffect(()=>{
 
   if (typeof window !== `undefined`) {
-    setToken(JSON.parse(window.localStorage.getItem('jwt')))
-    setUser(JSON.parse(window.localStorage.getItem('user')))
+    setToken(window.localStorage.getItem('jwt'))
+    setUser(window.localStorage.getItem('user'))
   }
+  const haveToken = token ?  ' ' : navigate('/');
+},[token])
 
-},[])
 
-const haveToken = token ?  ' ' : navigate("/");
 
   function logout (){
-      window.localStorage.clear();
+      localStorage.clear();
       navigate("/")
   }
 

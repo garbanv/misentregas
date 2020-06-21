@@ -25,7 +25,11 @@ function IndexPage  ()  {
       fetchData(login);
     }
 
-
+const isWindow = ()=> {
+  if (typeof window !== `undefined`) {
+    navigate('/dashboard')
+  }
+}
 
  function fetchData  (x){
   
@@ -42,13 +46,13 @@ function IndexPage  ()  {
         const jwt = data.jwt ? data.jwt : navigate("/");
         const username = data.user.username; 
     
-    
+        
 
         const token =  localStorage.setItem('jwt', jwt);
         const user = localStorage.setItem('user', username);
 
         // const isLoggedIn = data.jwt ? window.location.href="/dashboard" : console.log("Error en la clave")
-        const isLoggedIn = data.jwt ? navigate('/dashboard') : console.log("Error en la clave")
+        const isLoggedIn = data.jwt ? isWindow() : console.log("Error en la clave")
 
 
        })

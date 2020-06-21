@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 
 function CrearEntrega(){
-    const [token, setToken] = useState(localStorage.getItem('jwt'))
+    const [token, setToken] = useState(undefined)
     const [restList, setRestList] = useState([]);
     const [listTrips, setListTrips] = useState([])
     const [restId, setRestId] = useState('');
@@ -26,6 +26,11 @@ const [entrega, setEntrega] = useState({
 const isInitialMount = useRef(true);
 
 useEffect(()=> {
+
+  if (typeof window !== `undefined`) {
+    setToken(window.localStorage.getItem('jwt'))
+  }
+
     getRestaurants()
     if (isInitialMount.current) {
       isInitialMount.current = false;
@@ -34,6 +39,8 @@ useEffect(()=> {
       addToRestaurant(restTrip)
      
     }
+
+  
  
 },[restTrip])
 
